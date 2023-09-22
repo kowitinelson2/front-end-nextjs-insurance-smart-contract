@@ -1,28 +1,29 @@
-import Head from "next/head"
-//import Image from "next/image"
+import Link from "next/link"
 
-//import styles from "@/styles/Home.module.css"
-
-//import Header from "../components/Header"
-import ManualHeader from "@/components/ManualHeader"
-import CreatePolicy from "@/components/CreatePolicy"
-import BalancePolicy from "@/components/BalancePolicy"
-import SendClaim from "@/components/SendClaim"
-
-export default function Home() {
+function Home() {
     return (
-        <div>
-            <Head>
-                <title>Insurance Smart Contract</title>
-                <meta name="description" content="Our Insurance SMart Contract" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <ManualHeader></ManualHeader>
-            <CreatePolicy></CreatePolicy>
-            <BalancePolicy></BalancePolicy>
-            <SendClaim></SendClaim>
-            Hello!
+        <div className="flex h-screen bg-gray-100 justify-center items-center">
+            <div className="bg-white p-4 rounded-lg shadow-lg">
+                <ul className="text-center">
+                    <li className="mt-2">
+                        <Link href="/insurer" className="text-blue-500 hover:underline">
+                            Insurer
+                        </Link>
+                    </li>
+                    <li className="mt-2">
+                        <Link href="/insured" className="text-blue-500 hover:underline">
+                            Insured
+                        </Link>
+                    </li>
+                    <li className="mt-2">
+                        <Link href="/validator" className="text-blue-500 hover:underline">
+                            Validator
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     )
 }
+
+export default Home
