@@ -20,41 +20,44 @@ The insured page provides an interface for policyholders to view their insurance
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Usage
 
-First, run the development server:
+1. Run your local blockchain with the lottery code
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+> In a different terminal / command line
+
+```
+git clone https://github.com/kowitinelson2/Insurance-smart-contract
+cd hardhat-fund-me-fcc
+yarn 
+yarn hardhat node
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> You can read more about how to use that repo from its [README.md](https://github.com/kowitinelson2/Insurance-smart-contract/README.md)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+2. Add hardhat network to your metamask/wallet
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Get the RPC_URL of your hh node (usually `http://127.0.0.1:8545/`)
+- Go to your wallet and add a new network. [See instructions here.](https://metamask.zendesk.com/hc/en-us/articles/360043227612-How-to-add-a-custom-network-RPC)
+  - Network Name: Hardhat-Localhost
+  - New RPC URL: http://127.0.0.1:8545/
+  - Chain ID: 31337
+  - Currency Symbol: ETH (or GO)
+  - Block Explorer URL: None
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ideally, you'd then [import one of the accounts](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account) from hardhat to your wallet/metamask. 
 
-## Learn More
+3. Run this code
 
-To learn more about Next.js, take a look at the following resources:
+Back in a different terminal with the code from this repo, run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+yarn dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Go to UI and have fun!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Head over to your [localhost](http://localhost:3000) and play with the lottery!
 
 
